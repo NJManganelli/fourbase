@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<inputdatasets>
+<!-- <i file="../test/TopTree_CRAFT09_test.root"/> -->
+<!-- <i file="TTbar_Summer09_7TeV_TopTree_1.root"/> -->
+<i file="dcap://maite.iihe.ac.be///pnfs/iihe/cms/store/user/keaveney/SkimTests/TOPTREE_1.root"/>
+</inputdatasets>
+
+<outputfilename>
+<!-- <o file="TopTree_CRAFT09_Skimmed_test.root"/> -->
+<!-- <o file="TTbar_Summer09_7TeV_TopTree_Skimmed.root"/> -->
+<o file="Skimmed_TOPTREE.root"/>
+</outputfilename>
+
+<options>
+<!-- if HLTApplyAnd="1", 'AND' of the 2 trigger bits will be taken, otherwise the 'OR' -->
+<o skimOnHLT="0" HLTPath1="HLT_L2Mu5" HLTPath2="HLT_L2Mu3" HLTApplyAnd="0" TriggerMenu="TriggerResults__HLT" useJSON="0" JSONFile="/user/blyweert/TopTreeDevelopment/CMSSW_3_6_1_patch3/src/TopBrussels/TopTreeProducer/skimmer/JSON.txt"/>
+</options>
+
+<keepbranches>
+<k type="TopTree::TRootMCParticle" name="MCParticles" minPt="0" maxEta="10" skipObjects="0" minNObjects="0"/>
+<k type="TopTree::TRootMuon" name="Muons_slimmedMuons" minPt="15" maxEta="2.5" skipObjects="0" minNObjects="1"/>
+<k type="TopTree::TRootElectron" name="Electrons_slimmedElectrons" minPt="15" maxEta="2.5" skipObjects="0" minNObjects="1"/>
+<k type="TopTree::TRootPFJet" name="PFJets_slimmedJets" minPt="30" maxEta="2.5" skipObjects="0" minNObjects="4"/>
+<k type="TopTree::TRootGenJet" name="GenJets_slimmedGenJets" minPt="30" maxEta="2.5" skipObjects="0" minNObjects="0"/>
+<k type="TopTree::TRootSubstructureJet" name="FatJets_slimmedJetsAK8" minPt="30" maxEta="2.5" skipObjects="0" minNObjects="0"/>
+<k type="TopTree::TRootVertex" name="PrimaryVertex" minPt="0" maxEta="999" skipObjects="0" minNObjects="0"/>
+<k type="TopTree::TRootPFMET" name="PFMET_slimmedMETs" minPt="15" maxEta="2.4" skipObjects="0" minNObjects="0"/>
+</keepbranches>

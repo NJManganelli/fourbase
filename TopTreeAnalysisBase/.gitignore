@@ -1,0 +1,7 @@
+__init__.py
+*.o
+*.so
+Tools/src/Trigger.cc
+Tools/interface/Trigger.h
+Dict_rdict.pcm
+Dict.cc
